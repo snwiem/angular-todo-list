@@ -13,13 +13,21 @@ export interface Todo {
   title: string,
   status: TodoStatus,
   priority: TodoPriority,
+  created: Date,
 }
 
 export function createTodo(title: string): Todo {
   return {
     id: uuid(),
     title: title,
-    status: TodoStatus.Open,
-    priority: TodoPriority.None
+    status: getRandomInt(0, 2),
+    priority: getRandomInt(0, 3),
+    created: new Date(),
   };
+}
+
+function getRandomInt(min: number, max: number): number {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

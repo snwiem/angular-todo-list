@@ -25,210 +25,25 @@
                 </div>
               </form>
 
-              <table class="table mb-4">
-                <thead>
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Todo item</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Buy groceries for next week</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Renew car insurance</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sign up for online course</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
+              <div class="card mb-3" *ngFor="let todo of todoService.todos | async;">
+                <div class="card-header">
+                  <span class="text-muted" style="font-size: 0.8rem;">{{ todo.created.toLocaleDateString() }}</span>
+                  <app-todo-status class="float-end" [status]="todo.status"></app-todo-status>
+                  <app-todo-priority class="float-end" [priority]="todo.priority"></app-todo-priority>
+                </div>
+                <div class="card-body">
+                  {{ todo.title }}
+                </div>
 
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Buy groceries for next week</td>
-                  <td>In progress</td>
-                  <td>
+                <div class="card-footer text-center">
+                  <div class="btn-group">
                     <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Renew car insurance</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sign up for online course</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Buy groceries for next week</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Renew car insurance</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sign up for online course</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Buy groceries for next week</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Renew car insurance</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sign up for online course</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Buy groceries for next week</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Renew car insurance</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sign up for online course</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Buy groceries for next week</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Renew car insurance</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sign up for online course</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Buy groceries for next week</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Renew car insurance</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sign up for online course</td>
-                  <td>In progress</td>
-                  <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="submit" class="btn btn-success ms-1">Finished</button>
-                  </td>
-                </tr>
+                    <button type="submit" class="btn btn-success">Finished</button>
+                  </div>
 
-                </tbody>
-              </table>
+                </div>
 
+              </div>
             </div>
           </div>
         </div>
